@@ -146,6 +146,10 @@ function(_yargs, d3, demos) {
       setTimeout(function() {
         input.node().focus()
       })
+      
+      input.on('submit', function(e) {
+        e.preventDefault();
+      });
 
       input.on('keyup', function() {
         var e = d3.event;
