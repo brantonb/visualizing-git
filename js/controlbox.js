@@ -151,7 +151,8 @@ function(_yargs, d3, demos) {
         var e = d3.event;
 
         switch (e.keyCode) {
-          case 13:
+          case 10: // New line
+          case 13: // Carriage return
             if (this.value.trim() === '' || cBox.locked) {
               return;
             }
