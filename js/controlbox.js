@@ -153,10 +153,9 @@ function(_yargs, d3, demos) {
 
       input.on('keyup', function() {
         var e = d3.event;
-
-        switch (e.keyCode) {
-          case 10: // New line
-          case 13: // Carriage return
+        
+        var isEnter = e.keyCode == 13 || e.key == "Enter"
+        if (isEnter) {
             if (this.value.trim() === '' || cBox.locked) {
               return;
             }
@@ -168,6 +167,9 @@ function(_yargs, d3, demos) {
             this.value = '';
             e.stopImmediatePropagation();
             break;
+        }
+        else {
+        switch (e.keyCode) {
           case 38:
             var previousCommand = cBox._commandHistory[cBox._currentCommand + 1];
             if (cBox._currentCommand === -1) {
