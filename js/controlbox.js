@@ -198,6 +198,7 @@ function(_yargs, d3, demos) {
           default:
             document.getElementById('last-command').textContent = document.querySelectorAll(".control-box .input")[0].value
         }
+        }
 
       });
 
