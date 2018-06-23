@@ -166,7 +166,6 @@ function(_yargs, d3, demos) {
             cBox.command(this.value);
             this.value = '';
             e.stopImmediatePropagation();
-            break;
         }
         else {
         switch (e.keyCode) {
